@@ -57,7 +57,7 @@ def call(Map params = [:]) {
                 }
                 steps {
                     sh '''
-                make destroy-${ENV}   
+                make destroy  
                     '''
                 }
             }
