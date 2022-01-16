@@ -16,7 +16,7 @@ def call(Map params = [:]) {
             stage('Terraform INIT') {
                 when {
                     expression {
-                        return INIT
+                        return args.INIT
                     }
                 }
                 steps {
@@ -28,7 +28,7 @@ def call(Map params = [:]) {
             stage('Terraform PLAN') {
                 when {
                     expression {
-                        return PLAN
+                        return args.PLAN
                     }
                 }
                 steps {
@@ -40,7 +40,7 @@ def call(Map params = [:]) {
             stage('Terraform APPLY') {
                 when {
                     expression {
-                        return APPLY
+                        return args.APPLY
                     }
                 }
                 steps {
@@ -52,7 +52,7 @@ def call(Map params = [:]) {
             stage('Terraform DESTROY') {
                 when {
                     expression {
-                        return DESTROY
+                        return args.DESTROY
                     }
                 }
                 steps {
