@@ -33,7 +33,7 @@ def call(Map params = [:]) {
                 }
                 steps {
                     sh '''
-                make init-${ENV}   
+                make plan-${ENV}   
                     '''
                 }
             }
@@ -45,7 +45,19 @@ def call(Map params = [:]) {
                 }
                 steps {
                     sh '''
-                make init-${ENV}   
+                make apply-${ENV}   
+                    '''
+                }
+            }
+            stage('Terraform DESTROY') {
+                when {
+                    expression {
+                        return DESTROY
+                    }
+                }
+                steps {
+                    sh '''
+                make destroy-${ENV}   
                     '''
                 }
             }
