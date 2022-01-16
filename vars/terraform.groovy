@@ -16,8 +16,7 @@ def call(Map params = [:]) {
             stage(Terraform INIT) {
                 steps {
                     sh '''
-//                  terraform init or
-                    make init         
+                terraform init   
                     '''
                 }
             }
