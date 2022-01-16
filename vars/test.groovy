@@ -6,7 +6,7 @@ def warnings(message) {
     echo "WARNINGS: ${message}"
 }
 
-def URL1 = shared.com
+def URL1= "shared.com"
 
 def call() {
     pipeline {
