@@ -14,9 +14,14 @@ def call(Map params = [:]) {
         }
         stages {
             stage(Terraform INIT) {
+                when {
+                    expression {
+                        return INIT
+                    }
+                }
                 steps {
                     sh '''
-                terraform init   
+                make init-${ENV}   
                     '''
                 }
             }
