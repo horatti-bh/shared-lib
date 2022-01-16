@@ -6,9 +6,10 @@ def warnings(message) {
     echo "WARNINGS: ${message}"
 }
 
-URL1 = 'shared.com'
+
 
 def call() {
+    URL1 = 'shared.com'
     pipeline {
         agent any
         stages {
