@@ -6,6 +6,8 @@ def warnings(message) {
     echo "WARNINGS: ${message}"
 }
 
+def URL1 = shared.com
+
 def call() {
     pipeline {
         agent any
@@ -17,6 +19,7 @@ def call() {
                     '''
                     script {
                         info "Hello from info"
+                        print URL1
                     }
                 }
             }
