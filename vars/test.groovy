@@ -15,6 +15,9 @@ def call() {
                  sh '''
                     echo Hello word
                     '''
+                    script {
+                        info "Hello from info"
+                    }
                 }
             }
         }
