@@ -1,4 +1,4 @@
-def call () {
+def call (PLANRUN=true) {
     pipeline {
         agent any
         stages {
@@ -12,6 +12,12 @@ def call () {
 
 
             stage('terraform_plan_check') {
+                when {
+                    expression {
+                        return PLANRUN
+                    }
+                }
+
                 steps {
                     sh '''
                         terraform plan
