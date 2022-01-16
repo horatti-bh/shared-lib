@@ -1,7 +1,7 @@
 def call(Map params = [:]) {
     def args = [
             INIT : true,
-            PLAN : false.
+            PLAN : false,
             APPLY : true,
             DESTROY : false
     ]
